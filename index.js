@@ -77,11 +77,16 @@ console.log(temperatureCtoF(24));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(temp) {
-  return Math.round(temp*9/5) + 32;
+function temperatureInF(temp, unit) {
+  if (unit === 'C') {
+    let celtf = temperatureCtoF(temp);
+    return `${celtf}F`;
+  } else {
+    return `${temp}F`
+  }
 }
 
-console.log(temperatureInF(24, 'C'));
+
 /**
  * ### Challenge `makePersonObject`
  * 
